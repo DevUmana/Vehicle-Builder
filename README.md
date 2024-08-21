@@ -25,7 +25,7 @@ This Vehicle Builder application allows users to design and customize vehicles b
 
 ## Usage
 
-TBD
+Application Walkthrough [https://drive.google.com/file/d/1NMD1267xdF1DHTcxevFdzIsxkYGni2Pw/view](https://drive.google.com/file/d/1NMD1267xdF1DHTcxevFdzIsxkYGni2Pw/view)
 
 ## License
 
