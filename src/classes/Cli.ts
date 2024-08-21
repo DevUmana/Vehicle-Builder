@@ -86,31 +86,37 @@ class Cli {
           type: "input",
           name: "color",
           message: "Enter Color",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "make",
           message: "Enter Make",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "model",
           message: "Enter Model",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "year",
           message: "Enter Year",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "weight",
           message: "Enter Weight",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "topSpeed",
           message: "Enter Top Speed",
+          validate: this.checkNumber,
         },
       ])
       .then((answers) => {
@@ -141,36 +147,43 @@ class Cli {
           type: "input",
           name: "color",
           message: "Enter Color",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "make",
           message: "Enter Make",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "model",
           message: "Enter Model",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "year",
           message: "Enter Year",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "weight",
           message: "Enter Weight",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "topSpeed",
           message: "Enter Top Speed",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "towingCapacity",
           message: "Enter Towing Capacity",
+          validate: this.checkNumber,
         },
       ])
       .then((answers) => {
@@ -199,51 +212,61 @@ class Cli {
           type: "input",
           name: "color",
           message: "Enter Color",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "make",
           message: "Enter Make",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "model",
           message: "Enter Model",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "year",
           message: "Enter Year",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "weight",
           message: "Enter Weight",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "topSpeed",
           message: "Enter Top Speed",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "frontWheelDiameter",
           message: "Enter Front Wheel Diameter",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "frontWheelBrand",
           message: "Enter Front Wheel Brand",
+          validate: this.checkInput,
         },
         {
           type: "input",
           name: "rearWheelDiameter",
           message: "Enter Rear Wheel Diameter",
+          validate: this.checkNumber,
         },
         {
           type: "input",
           name: "rearWheelBrand",
           message: "Enter Rear Wheel Brand",
+          validate: this.checkInput,
         },
       ])
       .then((answers) => {
@@ -441,6 +464,24 @@ class Cli {
           this.performActions();
         }
       });
+  }
+
+  // create a function that checks the input is valid string and let the user know if it is not
+  checkInput(input: string): boolean {
+    if (input === "") {
+      console.log("Please enter a valid input");
+      return false;
+    }
+    return true;
+  }
+
+  // create a function that checks the input is valid number and let the user know if it is not
+  checkNumber(input: string): boolean {
+    if (isNaN(parseInt(input))) {
+      console.log("Please enter a valid number");
+      return false;
+    }
+    return true;
   }
 
   // method to start the cli
